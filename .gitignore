@@ -1,4 +1,6 @@
 .DS_Store
 *.swp
 dict/
-mmseg*
+mmseg-*
+build
+.lock-wscript
