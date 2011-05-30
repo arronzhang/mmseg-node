@@ -25,7 +25,7 @@ Handle<Value> mmseg::New (const Arguments& args)
 					String::New("Need data path")));
 	}
 	Handle<String> str = args[0]->ToString();
-	char path[str.Length()+1];
+	char path[str->Length()+1];
 	str->WriteAscii((char*) &path);
 	init( path );
 	return Undefined();
@@ -39,10 +39,10 @@ Handle<Value> mmseg::Segment (const Arguments& args)
 		return Undefined();
 	}
 	Handle<String> str = args[0]->ToString();
-	char words[str.Length()+1];
+	char words[str->Length()+1];
 	str->WriteAscii((char*) &words);
 	Local<Array> ar = segment(words);
-	return String::New(loc);
+	return ar;
 }	
 
 Handle<Value> mmseg::Close (const Arguments& args)
@@ -73,7 +73,7 @@ Local<Array> mmseg::segment(char *f_words)
 		return ar;
 	}
 	int i = 0;
-	Segmenter* seg = g_mgr.getSegmenter();
+	css::Segmenter* seg = g_mgr.getSegmenter();
 	seg->setBuffer((u1*)f_words, (u4)strlen(f_words));
 	while(1)
 	{ 
