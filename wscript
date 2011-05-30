@@ -16,3 +16,4 @@ def build(bld):
   obj.target = "mmseg"
   obj.source = "mmseg.cc"
   obj.uselib = "LIBMMSEG"
+  obj.includes = ["/usr/local/include/mmseg"]

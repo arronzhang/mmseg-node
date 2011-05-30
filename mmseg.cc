@@ -1,4 +1,6 @@
 #include <v8.h>
+#include "SegmenterManager.h"
+#include "Segmenter.h"
 
 using namespace v8;
 
