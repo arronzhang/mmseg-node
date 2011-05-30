@@ -6,7 +6,9 @@ tar zxvf mmseg-3.2.14.tar.gz
 cd mmseg-3.2.14
 ls
 ./bootstrap 
-./configure --prefix=/usr/local/mmseg3
+#./configure --prefix=/usr/local/mmseg3
+./configure
 make && make install
 
-#echo '/usr/local/mmseg3/lib' > /etc/ld.so.conf.d/mmseg.conf
+#/usr/local/include/mmseg/ /usr/local/lib
+

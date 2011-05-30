@@ -1,0 +1,12 @@
+{
+    "name": "mmseg"
+  , "version": "0.0.1"
+  , "description": "A node.js driver for libmmseg"
+  , "keywords": ["mmseg","libmmseg"]
+  , "author": "Hidden <zzdhidden@gmail.com>"
+  , "dependencies": {}
+  , "scripts": { "install": "node-waf configure build" }
+  , "main": "index"
+  , "engines": { "node": ">=0.1.97" }
+  , "licenses" :    [ { "type": "The MIT License", "url": "http://www.opensource.org/licenses/mit-license.php" } ]
+}
