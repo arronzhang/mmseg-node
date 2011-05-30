@@ -24,7 +24,7 @@ Handle<Value> mmseg::New (const Arguments& args)
 		return ThrowException(Exception::Error(
 					String::New("Need data path")));
 	}
-	Handle<String> str = arg[0]->ToString();
+	Handle<String> str = args[0]->ToString();
 	char path[str.Length()+1];
 	str->WriteAscii((char*) &path);
 	init( path );
@@ -38,7 +38,7 @@ Handle<Value> mmseg::Segment (const Arguments& args)
 	if (args.Length() == 0 || !args[0]->IsString()) {
 		return Undefined();
 	}
-	Handle<String> str = arg[0]->ToString();
+	Handle<String> str = args[0]->ToString();
 	char words[str.Length()+1];
 	str->WriteAscii((char*) &words);
 	Local<Array> ar = segment(words);
@@ -58,8 +58,7 @@ bool g_bInited = false;
 int mmseg::init(char *path)
 {
 	if( g_bInited ) return 1;
-	if (g_mgr->init(path) != 0) {
-		delete g_mgr;
+	if (g_mgr.init(path) != 0) {
 		perror(path);
 		return 1;
 	}
@@ -70,11 +69,11 @@ int mmseg::init(char *path)
 Local<Array> mmseg::segment(char *f_words)
 {
 	Local<Array> ar = Array::New();
-	( !g_bInited ) {
+	if( !g_bInited ) {
 		return ar;
 	}
 	int i = 0;
-	Segmenter* seg = g_mgr->getSegmenter();
+	Segmenter* seg = g_mgr.getSegmenter();
 	seg->setBuffer((u1*)f_words, (u4)strlen(f_words));
 	while(1)
 	{ 
@@ -94,7 +93,6 @@ Local<Array> mmseg::segment(char *f_words)
 void mmseg::destroy()
 {
 	if( g_bInited ){
-		delete g_mgr;
 		g_bInited = false;
 	}
 }
