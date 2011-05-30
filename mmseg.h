@@ -37,7 +37,7 @@ class mmseg: ObjectWrap
 
 	private:
 		static int init(char *path);
-		Local<Array>  segment(char *f_words);
+		static Local<Array>  segment(char *f_words);
 		static void destroy();
 };
 

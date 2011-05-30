@@ -25,8 +25,8 @@ Handle<Value> mmseg::New (const Arguments& args)
 					String::New("Need data path")));
 	}
 	Handle<String> str = args[0]->ToString();
-	char path[str->Length()+1];
-	str->WriteAscii((char*) &path);
+	char path[str->Utf8Length()+1];
+	str->WriteUtf8((char*) &path);
 	init( path );
 	return Undefined();
 	//return args.This();
@@ -39,8 +39,8 @@ Handle<Value> mmseg::Segment (const Arguments& args)
 		return Undefined();
 	}
 	Handle<String> str = args[0]->ToString();
-	char words[str->Length()+1];
-	str->WriteAscii((char*) &words);
+	char words[str->Utf8Length()+1];
+	str->WriteUtf8((char*) &words);
 	Local<Array> ar = segment(words);
 	return ar;
 }	
