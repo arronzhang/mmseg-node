@@ -1,7 +1,7 @@
 
 # mmseg
 
-  A node.js driver for [libmmseg](http://www.coreseek.cn/opensource/mmseg/)
+  A nodeJS driver for [libmmseg](http://www.coreseek.cn/opensource/mmseg/)
 
 # Install
 
