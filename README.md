@@ -1,7 +1,30 @@
 
 # mmseg
 
-  A node.js driver for libmmseg
+  A node.js driver for [libmmseg](http://www.coreseek.cn/opensource/mmseg/)
+
+# Install
+
+	#Install libmmseg on ubuntu
+	
+	apt-get install make gcc g++ automake libtool
+	wget http://www.coreseek.cn/uploads/csft/3.2/mmseg-3.2.14.tar.gz
+	tar zxvf mmseg-3.2.14.tar.gz 
+	cd mmseg-3.2.14
+	./bootstrap 
+	./configure
+	make && make install
+
+	#Install mmseg-node with npm
+	npm install mmseg
+
+#Useage
+
+	var mmseg = require("mmseg");
+	var q = mmseg.open('/usr/local/etc/');
+	console.log(q.segmentSync("我是中文分词"));
+
+
 
 ## License 
 
