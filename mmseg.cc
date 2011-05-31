@@ -12,7 +12,7 @@ void mmseg::Initialize (Handle<Object> target)
 
 	Local<FunctionTemplate> t = FunctionTemplate::New(New);
 	t->InstanceTemplate()->SetInternalFieldCount(1);
-	NODE_SET_PROTOTYPE_METHOD(t, "segment", Segment);
+	NODE_SET_PROTOTYPE_METHOD(t, "segmentSync", Segment);
 	NODE_SET_PROTOTYPE_METHOD(t, "close", Close);
 	target->Set(String::NewSymbol("mmseg"), t->GetFunction());
 }
