@@ -5,8 +5,6 @@
 
 # Install libmmseg
 
-Can't configure libmmseg with --prefix, or else the mmseg-node can't find the include file.
-
 ##libmmseg on ubuntu
 
 	apt-get install make gcc g++ automake libtool
@@ -33,6 +31,8 @@ Please check [the official install document](http://www.coreseek.cn/products-ins
 # Install mmseg-node
 
 	#Install mmseg-node with npm
+	#Set the os env MMSEG_PATH if you configure libmmseg with --prefix
+	#export MMSEG_PATH=/usr/local/mmseg3
 	npm install mmseg
 
 #Useage
