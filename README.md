@@ -26,6 +26,10 @@ Can't configure libmmseg with --prefix, or else the mmseg-node can't find the in
 	cd mmseg-3.2.14
 	aclocal &&  glibtoolize --copy --force --ltdl && autoreconf -i -f && automake --a && ./configure  && make && sudo make install
 
+##Other system
+
+Please check [the official install document](http://www.coreseek.cn/products-install/)
+
 # Install mmseg-node
 
 	#Install mmseg-node with npm
