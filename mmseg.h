@@ -27,7 +27,8 @@ class mmseg: ObjectWrap
 	protected:
 		static Persistent<FunctionTemplate> constructor_template;
 		static Handle<Value> New (const Arguments& args);
-		static Handle<Value> Segment (const Arguments& args);
+		static Handle<Value> SegmentSync (const Arguments& args);
+		static Handle<Value> ComplexSegmentSync (const Arguments& args);
 		static Handle<Value> Close (const Arguments& args);
 
 		mmseg () : ObjectWrap() {
@@ -37,7 +38,8 @@ class mmseg: ObjectWrap
 
 	private:
 		static int init(char *path);
-		static Local<Array>  segment(char *f_words);
+		static Local<Array>  segmentSync(char *f_words);
+		static Local<Array>  complexSegmentSync(char *f_words);
 		static void destroy();
 };
 
