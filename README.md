@@ -3,10 +3,12 @@
 
   A nodeJS driver for [libmmseg](http://www.coreseek.cn/opensource/mmseg/)
 
-# Install
+# Install libmmseg
 
-	#Install libmmseg on ubuntu
-	
+Can't configure libmmseg with --prefix, or else the mmseg-node can't find the include file.
+
+##libmmseg on ubuntu
+
 	apt-get install make gcc g++ automake libtool
 	wget http://www.coreseek.cn/uploads/csft/3.2/mmseg-3.2.14.tar.gz
 	tar zxvf mmseg-3.2.14.tar.gz 
@@ -14,6 +16,17 @@
 	./bootstrap 
 	./configure
 	make && make install
+	#Install libmmseg on ubuntu
+
+##libmmseg on mac os
+
+	sudo port install autoconf263 libtool-devel m4 autoconf automake libtool
+	wget http://www.coreseek.cn/uploads/csft/3.2/mmseg-3.2.14.tar.gz
+	tar zxvf mmseg-3.2.14.tar.gz 
+	cd mmseg-3.2.14
+	aclocal &&  glibtoolize --copy --force --ltdl && autoreconf -i -f && automake --a && ./configure  && make && sudo make install
+
+# Install mmseg-node
 
 	#Install mmseg-node with npm
 	npm install mmseg
