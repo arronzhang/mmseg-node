@@ -103,6 +103,7 @@ Local<Array> mmseg::segmentSync(char *f_words)
 		i++;
 		seg->popToken(len);
 	}
+	g_mgr.clear();
 	return ar;
 }
 
@@ -188,6 +189,7 @@ Local<Array> mmseg::complexSegmentSync(char *f_words)
 	//	i++;
 
 	//}
+	g_mgr.clear();
 	return ar;
 }
 
