@@ -36,7 +36,7 @@ Please check [the official install document](http://www.coreseek.cn/products-ins
 	#export MMSEG_PATH=/usr/local/mmseg3
 	npm install mmseg
 
-##Useage
+##Usage
 
 	var mmseg = require("mmseg");
 	var q = mmseg.open('/usr/local/etc/');
