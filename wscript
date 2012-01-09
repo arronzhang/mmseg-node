@@ -17,6 +17,7 @@ def configure(conf):
   conf.check(lib='stdc++', libpath=['/usr/lib', '/usr/local/lib'], uselib_store='LIBSTDC')
   conf.check(lib='mmseg', libpath=libpath, uselib_store='LIBMMSEG')
   conf.env.append_value('CCFLAGS', ['-O3'])
+  conf.env.set_variant("default")
 
 def build(bld):
   mmsegpath = os.environ.get('MMSEG_PATH')
