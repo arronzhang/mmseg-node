@@ -1,4 +1,4 @@
-var mmseg = require("./build/Release/mmseg.node").mmseg;
+var mmseg = require("mmseg").mmseg;
 
 module.exports.open =  function(file) {
 	return new mmseg(file);
