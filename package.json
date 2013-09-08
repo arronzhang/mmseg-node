@@ -5,8 +5,8 @@
   , "keywords": ["mmseg","libmmseg"]
   , "author": "Hidden <zzdhidden@gmail.com>"
   , "dependencies": {}
-  , "scripts": { "install": "node-waf configure build" }
+  , "scripts": { "install": "node-gyp clean configure build" }
   , "main": "index"
-  , "engines": { "node": ">=0.1.97" }
+  , "engines": { "node": ">=0.8.0" }
   , "licenses" :    [ { "type": "The MIT License", "url": "http://www.opensource.org/licenses/mit-license.php" } ]
 }
