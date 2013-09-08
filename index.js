@@ -1,4 +1,4 @@
-var mmseg = require("./build/default/mmseg.node").mmseg;
+var mmseg = require("./build/Release/mmseg.node").mmseg;
 
 module.exports.open =  function(file) {
 	return new mmseg(file);
@@ -23,16 +23,13 @@ module.exports.clean =function(ar) {
 	return ar;
 };
 
-module.exports.uniq =function(ar) {
-	var a = [];
-	var l = ar.length;
-	for(var i=0; i<l; i++) {
-		for(var j=i+1; j<l; j++) {
-			// If ar[i] is found later in the array
-			if (ar[i] === ar[j])
-				j = ++i;
-		}
-		a.push(ar[i]);
+module.exports.uniq =function(arr) {
+	var u = {}, a = [];
+	for(var i = 0, l = arr.length; i < l; ++i){
+		if(u.hasOwnProperty(arr[i]))
+			continue;
+		a.push(arr[i]);
+		u[arr[i]] = 1;
 	}
 	return a;
 }
