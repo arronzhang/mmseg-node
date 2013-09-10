@@ -200,9 +200,17 @@ void mmseg::destroy()
 	}
 }
 
-extern "C" void init (Handle<Object> target)
-{
+//extern "C" void init (Handle<Object> target)
+//{
+//	HandleScope scope;
+//	mmseg::Initialize(target);
+//}
+
+
+
+void RegisterModule(Handle<Object> target) {
 	HandleScope scope;
-	mmseg::Initialize(target);
+    mmseg::Initialize(target);
 }
 
+NODE_MODULE(mmseg, RegisterModule);
